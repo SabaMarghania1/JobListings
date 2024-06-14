@@ -1,4 +1,4 @@
-export default function Item({item}) {
+export default function Item({item, handleFilterClick, selectedFilters}) {
   return (
     <li className={`item ${item.featured && 'featured'}`}>
       <img src={item.logo} alt="company.img" />
@@ -20,11 +20,39 @@ export default function Item({item}) {
         </div>
       </div>
       <div className="filter-tags">
-        {item.role && <span className="filter-tag">{item.role}</span>}
-        {item.level && <span className="filter-tag">{item.level}</span>}
+        {item.role && (
+          <span className="filter-tag" onClick={() => handleFilterClick('role', item.role)}>
+            {item.role}
+          </span>
+        )}
+        {item.level && (
+          <span className="filter-tag" onClick={() => handleFilterClick('level', item.level)}>
+            {item.level}
+          </span>
+        )}
         {item.languages &&
-          item.languages.map(language => <span className="filter-tag">{language}</span>)}
-        {item.tools && item.tools.map(tool => <span className="filter-tag">{tool}</span>)}
+          item.languages.map(language => {
+            console.log(language);
+            return (
+              <span
+                key={language}
+                onClick={() => handleFilterClick('languages', item.languages)}
+                className="filter-tag"
+              >
+                {language}
+              </span>
+            );
+          })}
+        {item.tools &&
+          item.tools.map(tool => (
+            <span
+              key={tool}
+              className="filter-tag"
+              onClick={() => handleFilterClick('tools', item.tools)}
+            >
+              {tool}
+            </span>
+          ))}
       </div>
     </li>
   );
