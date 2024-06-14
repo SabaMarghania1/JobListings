@@ -39,6 +39,7 @@ header {
   align-items: center;
   justify-content: center;
   width: calc(100% - 48px);
+  margin-bottom: 34px;
 }
 
 .items {
@@ -55,11 +56,12 @@ header {
 .item {
   width: 100%;
   border-radius: 5px;
-  height: 257px;
   background-color: white;
   box-shadow: 0px 15px 20px -5px rgba(13, 113, 130, 0.15);
   position: relative;
   padding: 39px 24px 24px;
+  display: flex;
+  flex-direction: column;
 }
 
 .featured {
@@ -75,8 +77,109 @@ header {
   left: 24px;
 }
 
+.job-info-container {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #b7c4c4;
+  width: 100%;
+  margin-bottom: 16px;
+}
+
 .item-headers {
   display: flex;
   align-items: center;
   gap: 33px;
+}
+
+.item-headers p {
+  font-size: 13px;
+  color: #5ca5a5;
+  font-weight: 700;
+}
+
+.headers-tags {
+  display: flex;
+  gap: 8px;
+}
+
+.tag {
+  border-radius: 12px;
+  color: white;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 14px;
+  letter-spacing: -0.108px;
+  text-transform: uppercase;
+  padding: 6px 8px 4px 9px;
+}
+
+.new-tag {
+  background-color: #5ca5a5;
+  width: 51px;
+}
+
+.featured-tag {
+  width: 79px;
+  background-color: black;
+  color: #fff;
+}
+
+.job-title {
+  font-size: 15px;
+  color: #2b3939;
+  line-height: 24px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.5s ease;
+}
+
+.job-title:hover {
+  color: #5ca5a5;
+}
+
+.job-info {
+  display: flex;
+  gap: 9.5px;
+  align-items: center;
+}
+
+.job-info span {
+  display: inline-block;
+
+  color: #7c8f8f;
+  font-weight: 500;
+  line-height: 24px; /* 150% */
+  letter-spacing: -0.123px;
+}
+
+.circle {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background-color: #b7c4c4;
+  margin: 9px 0 11px;
+}
+
+.filter-tags {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.filter-tag {
+  display: inline-block;
+  padding: 5px 11px 3px 8px;
+  border-radius: 4px;
+  color: #5ca5a5;
+  background-color: rgba(92, 165, 165, 0.1);
+  cursor: pointer;
+  transition: 0.5s all ease;
+  font-weight: 700;
+}
+
+.filter-tag:hover {
+  background: rgba(92, 165, 165, 1);
+  color: white;
 }

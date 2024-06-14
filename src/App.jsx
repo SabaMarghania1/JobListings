@@ -8,7 +8,7 @@ export default function App() {
   return (
     <>
       <header className="header"></header>
-      <Filters />
+      {/* <Filters /> */}
       <main className="container">
         <ul className="items">
           {data.map(item => (
