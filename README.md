@@ -2,7 +2,7 @@
 
 This project is a job listings app built as a solution for the [Frontend Mentor](https://www.frontendmentor.io/) challenge. It allows users to view job listings based on various filters such as role, level, languages, and tools.
 
-![Job Listings App Preview](#)
+Live Preview - [Live](https://job-listings-cyan.vercel.app/)
 
 ## Features
 
