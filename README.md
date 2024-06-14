@@ -1,8 +1,12 @@
-# React + Vite
+# Job Listings App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This project is a job listings app built as a solution for the [Frontend Mentor](https://www.frontendmentor.io/) challenge. It allows users to view job listings based on various filters such as role, level, languages, and tools.
 
-Currently, two official plugins are available:
+![Job Listings App Preview](#)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Features
+
+- View job listings with details such as company logo, job title, company name, job type (e.g., Full Time, Part Time), location, and more.
+- Filter job listings based on role, level, languages, and tools using interactive filter buttons.
+- Clear all filters with a single click.
+- Responsive design that adapts well to various screen sizes and devices.
