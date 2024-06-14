@@ -1,7 +1,9 @@
-export default function Item({item, handleFilterClick, selectedFilters}) {
+import React from 'react';
+
+export default function Item({item, handleFilterClick}) {
   return (
     <li className={`item ${item.featured && 'featured'}`}>
-      <img src={item.logo} alt="company.img" />
+      <img src={item.logo} alt="Company Logo" />
       <div className="job-info-container">
         <div className="item-headers">
           <p>{item.company}</p>
@@ -31,24 +33,21 @@ export default function Item({item, handleFilterClick, selectedFilters}) {
           </span>
         )}
         {item.languages &&
-          item.languages.map(language => {
-            console.log(language);
-            return (
-              <span
-                key={language}
-                onClick={() => handleFilterClick('languages', item.languages)}
-                className="filter-tag"
-              >
-                {language}
-              </span>
-            );
-          })}
+          item.languages.map(language => (
+            <span
+              key={language}
+              className="filter-tag"
+              onClick={() => handleFilterClick('languages', language)}
+            >
+              {language}
+            </span>
+          ))}
         {item.tools &&
           item.tools.map(tool => (
             <span
               key={tool}
               className="filter-tag"
-              onClick={() => handleFilterClick('tools', item.tools)}
+              onClick={() => handleFilterClick('tools', tool)}
             >
               {tool}
             </span>

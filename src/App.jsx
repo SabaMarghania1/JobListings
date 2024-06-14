@@ -13,11 +13,36 @@ export default function App() {
   });
 
   function handleFilterClick(filter, value) {
+    console.log(filter, value);
+    setSelectedFilters(prevFilters => ({
+      ...prevFilters,
+      [filter]: Array.isArray(prevFilters[filter])
+        ? toggleFilter(prevFilters[filter], value)
+        : value,
+    }));
+  }
+
+  function toggleFilter(currentFilter, value) {
+    if (currentFilter.includes(value)) {
+      return currentFilter.filter(item => item !== value);
+    } else {
+      return [...currentFilter, value];
+    }
+  }
+
+  function handleClear() {
     setSelectedFilters({
-      ...selectedFilters,
-      [filter]: value,
+      languages: [],
+      tools: [],
+      role: '',
+      level: [],
     });
   }
+  const isVisible =
+    selectedFilters.languages.length > 0 ||
+    selectedFilters.tools.length > 0 ||
+    selectedFilters.role.length > 0 ||
+    selectedFilters.level.length > 0;
 
   const filteredData = data.filter(item => {
     const {languages, tools, role, level} = selectedFilters;
@@ -40,16 +65,18 @@ export default function App() {
   return (
     <>
       <header className="header"></header>
-      <Filters />
+      {isVisible && (
+        <Filters
+          selectedFilters={selectedFilters}
+          handleFilterClick={handleFilterClick}
+          handleClear={handleClear}
+        />
+      )}
+
       <main className="container">
         <ul className="items">
           {filteredData.map(item => (
-            <Item
-              key={item.id}
-              item={item}
-              selectedFilters={selectedFilters}
-              handleFilterClick={handleFilterClick}
-            />
+            <Item key={item.id} item={item} handleFilterClick={handleFilterClick} />
           ))}
         </ul>
       </main>
